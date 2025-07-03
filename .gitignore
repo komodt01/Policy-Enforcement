@@ -1,0 +1,316 @@
+# Policy as Code Enforcement Lab - .gitignore
+
+# Terraform
+#########################
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files contain sensitive data and should not be shared
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files, which might contain sensitive data
+*.tfvars
+*.tfvars.json
+
+# Ignore override files as they are usually used to override resources locally
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include override files you do wish to add to version control using negated pattern
+# !example_override.tf
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+tfplan*
+*.tfplan
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Terraform lock file (optional - some teams prefer to commit this)
+# .terraform.lock.hcl
+
+# OPA and Rego
+#########################
+# OPA decision logs (if any)
+*.opa_decisions
+
+# OPA bundle files
+bundle.tar.gz
+*.bundle
+
+# Policy test coverage files
+coverage.json
+coverage.html
+
+# Terraform plan JSON files (contain sensitive data)
+plan.json
+*.plan.json
+
+# AWS and Cloud Provider
+#########################
+# AWS credentials (should never be committed)
+.aws/
+aws-credentials.txt
+*.pem
+*.key
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and Editor Files
+#########################
+# VSCode
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Operating System Files
+#########################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# Logs and Temporary Files
+#########################
+# General logs
+*.log
+logs/
+log/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Build and Output Directories
+#########################
+# Build outputs
+build/
+dist/
+out/
+target/
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Project Specific
+#########################
+# Manual review artifacts
+manual-review/*.backup
+manual-review/temp-*
+
+# Test artifacts
+test/temp/
+test/output/
+test/*.backup
+
+# Script outputs
+scripts/output/
+scripts/*.log
+
+# Backup files
+*.backup
+*.bak
+*.orig
+*~
+
+# Temporary documentation
+docs/temp/
+docs/*.tmp
+
+# Local configuration overrides
+config.local.*
+local.config.*
+
+# Development and Debug Files
+#########################
+# Debug files
+debug.log
+*.debug
+
+# Profiling files
+*.prof
+*.trace
+
+# Memory dumps
+*.mem
+*.dmp
+
+# Python (if used for scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Security and Sensitive Data
+#########################
+# Never commit these!
+secrets.txt
+passwords.txt
+private_key*
+*.p12
+*.pfx
+certificate.crt
+*.csr
+
+# API keys and tokens
+api_keys.txt
+.secrets
+tokens.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration files that might contain secrets
+config.production.*
+.production
+
+# CI/CD specific secrets
+.github/secrets/
+.gitlab-ci-secrets/
+
+# Comments for Team Reference
+#########################
+# Files to include in version control:
+# - All .rego policy files
+# - Terraform configuration templates
+# - Documentation and README files
+# - CI/CD workflow definitions
+# - Test files and examples
+# - Scripts (but not their output)
+
+# Files to never commit:
+# - Terraform state files (contain sensitive data)
+# - AWS credentials or API keys
+# - Terraform plan outputs (contain sensitive data)
+# - Any files with passwords or secrets
+# - Personal IDE configurations
+# - Operating system generated files
+
+# Optional files (team decision):
+# - .terraform.lock.hcl (some teams commit, others don't)
+# - terraform.tfvars (if it contains only non-sensitive defaults)
+# - IDE workspace files (if team uses same IDE)
+
+# Note: This .gitignore is designed for a Policy as Code project
+# using Terraform and OPA. Adjust based on your team's needs
+# and security requirements.
